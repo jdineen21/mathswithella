@@ -1,0 +1,16 @@
+# List of files/folders to exclude
+.idea/
+.vscode/
+.venv/
+
+media/
+node_modules/
+
+static/js/
+static/assets/
+
+.env
+
+*.pyc
+*.sqlite
+*.sqlite3

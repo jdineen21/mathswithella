@@ -8,6 +8,7 @@ node_modules/
 
 static/js/
 static/assets/
+static/images
 
 .env
 

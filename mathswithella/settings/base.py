@@ -30,8 +30,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
+    'worksheet.apps.WorksheetConfig',
     
-    'django.contrib.admin',
+    'mathswithella.apps.MathsWithEllaAdminConfig',
+    
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

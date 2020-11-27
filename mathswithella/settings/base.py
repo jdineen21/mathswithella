@@ -31,6 +31,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'worksheet.apps.WorksheetConfig',
+    'question.apps.QuestionConfig',
     
     'mathswithella.apps.MathsWithEllaAdminConfig',
     

@@ -13,14 +13,14 @@ def index(request):
 
 def detail(request, worksheet_internal_name, page_num):
     w = Worksheet.objects.get(internal_name=worksheet_internal_name)
-    qs = w.question_set.all()
+    qs = w.worksheetquestion_set.all()
 
     questions = []
     for q in qs:
         qt = q.question_template
         questions.append({
             'number': q.number,
-            'template': 'worksheet/templates/%s' % qt.template_name,
+            'template': 'question/%s' % qt.template_name,
             'detail': getattr(question, qt.internal_name),
         })
     

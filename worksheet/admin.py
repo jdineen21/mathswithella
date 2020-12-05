@@ -1,22 +1,35 @@
 from django.contrib import admin
 
-from .models import Worksheet
-from .models import WorksheetQuestion
-#from .models import QuestionTemplate
+from .models import Worksheet, WorksheetPage, WorksheetPageQuestion
 
-class WorksheetQuestionInline(admin.TabularInline):
-    model = WorksheetQuestion
+class WorksheetPageInline(admin.TabularInline):
+    model = WorksheetPage
     extra = 0
-    ordering = ('number',)
+
+class WorksheetPageQuestionInline(admin.TabularInline):
+    model = WorksheetPageQuestion
+    extra = 0
 
 class WorksheetAdmin(admin.ModelAdmin):
     list_display = ['display_name', 'internal_name']
-    ordering = ('display_name',)
+    ordering = ['display_name']
 
     inlines = [
-        WorksheetQuestionInline,
+        WorksheetPageInline,
     ]
 
+class WorksheetPageAdmin(admin.ModelAdmin):
+    list_display = ['__str__']
+    ordering = ['worksheet', 'number']
+
+    inlines = [
+        WorksheetPageQuestionInline,
+    ]
+
+class WorksheetPageQuestionAdmin(admin.ModelAdmin):
+    list_display = ['__str__']
+    ordering = ['worksheet_page', 'number']
+
 admin.site.register(Worksheet, WorksheetAdmin)
-#admin.site.register(Question, QuestionAdmin)
-#admin.site.register(QuestionTemplate, QuestionTemplateAdmin)
+admin.site.register(WorksheetPage, WorksheetPageAdmin)
+admin.site.register(WorksheetPageQuestion, WorksheetPageQuestionAdmin)

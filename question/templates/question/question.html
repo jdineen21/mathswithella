@@ -1,0 +1,14 @@
+<div id="question-{{ question.number }}" class="row">
+    <div class="col border-bottom border-dark mx-3 mb-3 pt-5 pb-5">
+        <div class="row">
+            <b class="col-1">{{ question.number }}</b>
+            <div class="col-11">
+                {% block question %}{% endblock %}
+            </div>
+        </div>
+        {% block question_detail %}{% endblock %}
+        <div class="row justify-content-end  mt-3">
+            <p class="col-1">(1)</p>
+        </div>
+    </div>
+</div>

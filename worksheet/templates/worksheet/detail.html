@@ -15,38 +15,38 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{% url 'home:index' %}">Home</a></li>
         <li class="breadcrumb-item"><a href="{% url 'worksheet:index' %}">Worksheet</a></li>
-        <li class="breadcrumb-item active" aria-current="page">N1</li>
+        <li class="breadcrumb-item active" aria-current="page">{{ internal_name }}</li>
     </ol>
 </nav>
 <section class="container-fluid mb-3">
     <div class="row">
-        <div class="col-1 offset-1 d-none d-lg-block">
-            <nav id="navbar-example3" class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="#">Questions</a>
-                <div class="w-100"></div>
-                <nav class="nav nav-pills flex-column justify-content-center">
+        <div class="col-1 col-xl-2 col-lg-1 d-none d-xl-block"></div>
+        <div class="col col-xl-1 col-lg-2 d-none d-md-block">
+            <div id="question-nav" class="list-group">
+                {% for page_num, questions in page_structure.items %}
                     {% for question in questions %}
-                        <a class="nav-link" href="#question-{{ question.number }}">{{ question.number }}</a>
+                        <a class="list-group-item list-group-item-action text-center" href="{% url 'worksheet:detail' internal_name page_num %}#question-{{ question.number }}">{{ question.number }}</a>
                     {% endfor %}
-                </nav>
-            </nav>
-        </div>
-        <div class="col-lg-6 col-md-12 offset-lg-1 offset-md-0">
-            <section class="container-fluid col border border-dark rounded">
-                {% for question in questions %}
-                    {% include question.template %}
                 {% endfor %}
-            </section>
+            </div>
         </div>
-        <div class="w-100 d-block d-lg-none"></div>
-        <div class="col-lg-2 col-md-12 offset-lg-1 offset-md-0">
-            <h4>Marks</h4>
+        <div class="col-12 col-xl-6 col-md-9">
+            <div class="container-fluid col border border-dark rounded">
+                {% for page_num, questions in page_structure.items %}
+                    {% for question in questions %}
+                        {% if page_num == active_page_num %}
+                            {% include question.question_template.template_name %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </div>
         </div>
+        <div class="col-3"></div>
     </div>
 </section>
 <nav aria-label="Page navigation example" class="container-fluid">
     <ul class="pagination justify-content-center">
-        {% if pagination.number == 1 %}
+        {% if active_page_num == 1 %}
         <li class="page-item disabled">
             <a class="page-link" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
@@ -54,19 +54,19 @@
         </li>
         {% else %}
         <li class="page-item">
-            <a class="page-link" href="{% url 'worksheet:detail' worksheet_internal_name pagination.number|add:-1 %}" aria-label="Previous">
+            <a class="page-link" href="{% url 'worksheet:detail' internal_name active_page_num|add:-1 %}" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
         {% endif %}
-        {% for page in pagination.range %}
-        {% if pagination.page == pagination.number %}
-        <li class="page-item active"><a class="page-link" href="{% url 'worksheet:detail' worksheet_internal_name page %}">{{ page }}</a></li>
-        {% else %}
-        <li class="page-item"><a class="page-link" href="{% url 'worksheet:detail' worksheet_internal_name page %}">{{ page }}</a></li>
-        {% endif %}
+        {% for page_num, questions in page_structure.items %}
+            {% if active_page_num == page_num %}
+            <li class="page-item active"><a class="page-link" href="{% url 'worksheet:detail' internal_name page_num %}">{{ page_num }}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="{% url 'worksheet:detail' internal_name page_num %}">{{ page_num }}</a></li>
+            {% endif %}
         {% endfor %}
-        {% if pagination.number == pagination.count %}
+        {% if active_page_num == page_last %}
         <li class="page-item disabled">
             <a class="page-link" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
@@ -74,7 +74,7 @@
         </li>
         {% else %}
         <li class="page-item">
-            <a class="page-link" href="{% url 'worksheet:detail' worksheet_internal_name pagination.number|add:1 %}" aria-label="Next">
+            <a class="page-link" href="{% url 'worksheet:detail' internal_name active_page_num|add:1 %}" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
             </a>
         </li>

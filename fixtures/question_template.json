@@ -1,0 +1,41 @@
+[
+    {
+        "model": "question.questiontemplate",
+        "pk": 1,
+        "fields": {
+            "display_name": "Ordering positive and negative numbers",
+            "internal_name": "order_numbers",
+            "template_name": "N1/order_numbers.html",
+            "marks": 1,
+            "explantation_text": "",
+            "created_at": "2020-11-29T18:29:38.026Z",
+            "updated_at": "2020-11-29T18:29:38.026Z"
+        }
+    },
+    {
+        "model": "question.questiontemplate",
+        "pk": 2,
+        "fields": {
+            "display_name": "Ordering decimals",
+            "internal_name": "order_positive_decimals",
+            "template_name": "N1/order_decimals.html",
+            "marks": 1,
+            "explantation_text": "",
+            "created_at": "2020-11-29T18:29:51.685Z",
+            "updated_at": "2020-11-29T18:29:51.685Z"
+        }
+    },
+    {
+        "model": "question.questiontemplate",
+        "pk": 3,
+        "fields": {
+            "display_name": "Converting Percentages",
+            "internal_name": "convert_percentage",
+            "template_name": "N1/convert_percentage.html",
+            "marks": 1,
+            "explantation_text": "",
+            "created_at": "2020-11-29T18:30:03.575Z",
+            "updated_at": "2020-11-29T18:30:03.575Z"
+        }
+    }
+]

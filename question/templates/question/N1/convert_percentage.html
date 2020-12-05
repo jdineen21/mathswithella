@@ -1,24 +1,22 @@
+
+{% extends "question/question.html" %}
+
+{% load static %}
+
+{% block question %}
 <div class="row">
-    <div class="col border-bottom border-dark mx-3 mb-3 pt-5 pb-5">
+    <div class="col-12">
         <div class="row">
-            <b class="col-1">{{ question.number }}</b>
-            <div class="col-11">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col">
-                                <p>Write {{ question.detail.random_float }} as a percentage.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col">
+                <p>Write {{ question.detail.random_float }} as a percentage.</p>
             </div>
-        </div>
-        <div class="row justify-content-end mt-5 pt-5">
-            <input class="col-2 px-1" type="text" name="their_answer1" id="their_answer1">
-        </div>
-        <div class="row justify-content-end  mt-3">
-            <p class="col-1">(1)</p>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block question_detail %}
+<div class="row justify-content-end mt-5 pt-5">
+    <input class="col-2 px-1" type="text" name="their_answer1" id="their_answer1">
+</div>
+{% endblock %}

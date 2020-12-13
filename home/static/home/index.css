@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: rgb(51, 71, 91);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    white-space: pre-wrap;
+}
+
+p {
+    white-space: pre-wrap;
+    font-size: 1;
+    line-height: 26px;
+}
+
+.overflow-hidden-x {
+    margin: 0;
+    font-family: "AvenirNext","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.container {
+    padding: 2rem 0;
+}
+
+.content-wrapper, .navbar-wrapper {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1em;
+    box-sizing: content-box;
+}
+
+.navbar-container {
+    
+}
+
+.navbar {
+    position: relative;
+    background-color: #ffffff;
+    color: #33475b;
+    z-index: 90;
+    box-shadow: 0 2px 4px rgba(45,62,80,0.12);
+}
+
+.nav-brand {
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+.nav-brand img {
+    height: 8rem;
+}
+
+.nav-item {
+    line-height: 8rem;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.nav-item a {
+    padding: 1rem;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 0.1rem;
+}
+
+.nav-item a:hover {
+    background-color: rgb(34, 53, 71);
+    color: #ffffff;
+}
+
+.container-first {
+    padding: 5rem 0 15rem 0;
+    background-color: #fef8f0;
+    color: #33475b;
+    border-bottom: 3px solid rgb(34, 53, 71);
+}
+
+.container-first h1 {
+    font-size: 4rem;
+    margin: 0.3rem 0;
+}
+
+.container-first h4 {
+    font-size: 2rem;
+}
+
+.dual-content {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.profile-wrapper img {
+    padding: 0 10%;
+    width: 80%;
+    border-radius: 0.1rem;
+}
+
+.personal-statement p {
+    font-size: 1rem;
+}
+
+.button-margin {
+    margin-top: 3rem;
+}
+
+.button a, .button-margin a {
+    padding: 1rem;
+    color: #ffffff;
+    background-color: #ff7a59;
+    text-decoration: none;
+    border-radius: 0.1rem;
+}
+
+.button a:hover {
+    background-color: rgb(34, 53, 71);
+    color: #ffffff;
+}
+
+.button-margin a:hover {
+    background-color: rgb(34, 53, 71);
+    color: #ffffff;
+}

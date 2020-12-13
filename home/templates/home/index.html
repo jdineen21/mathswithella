@@ -15,106 +15,85 @@
     <meta property="og:title" content="Maths with Ella" />
     <meta property="og:url" content="https://mathswithella.co.uk/" />
     <meta property="og:type" content="website" />
-    <meta property="og:image"
-        content="https://res.cloudinary.com/akreative/image/upload/c_scale,f_auto,h_500,q_auto,w_500/v1604226577/logo_z0x4jy.svg" />
+    <meta property="og:image" content="{% static 'img/logo_z0x4jy.webp' %}" />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
     <meta itemprop="name" content="Maths with Ella" />
     <meta itemprop="url" content="https://mathswithella.co.uk/" />
-    <meta itemprop="thumbnailUrl"
-        content="https://res.cloudinary.com/akreative/image/upload/c_scale,f_auto,h_400,q_auto,w_400/v1604226577/logo_z0x4jy.webp" />
+    <meta itemprop="thumbnailUrl" content="{% static 'img/logo_z0x4jy.webp' %}" />
     <meta name="twitter:title" content="Maths with Ella" />
-    <meta name="twitter:image"
-        content="https://res.cloudinary.com/akreative/image/upload/c_scale,f_auto,h_400,q_auto,w_400/v1604226577/logo_z0x4jy.webp" />
+    <meta name="twitter:image" content="{% static 'img/logo_z0x4jy.webp' %}" />
     <meta name="twitter:url" content="https://mathswithella.co.uk/" />
     <meta name="twitter:card" content="summary" />
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#9f00a7">
     <meta name="theme-color" content="#ffffff">
-    <!-- Place favicon.ico in the root directory -->
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
-        integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <meta name="theme-color" content="#fafafa">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/index.css' %}">
 </head>
 
-<body class="has-sidemenu overflow-hidden-x">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <a class="navbar-brand" href="#">
-                    <img height="150" src="//static1.squarespace.com/static/5eb536030d11157eb4dbe5c0/t/5ecd2e01e8296a24e19ff8b7/1605380788750/?format=1500w" alt="Maths with Ella">
-                </a>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Prices</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Tutoring</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Online Worksheets
+<body class="overflow-hidden-x">
+    <nav class="navbar-container">
+        <div class="navbar-wrapper">
+            <div class="navbar">
+                <div class="nav-brand">
+                    <a href="{% url 'home:index' %}">
+                        <img src="{% static 'img/logo.png' %}" alt="Maths with Ella">
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Worksheets</a>
-                        <a class="dropdown-item" href="#">Tests</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Prices</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Tutoring</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Online Worksheets</a>
+                </div>
+                <div class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
+                </div>
+                <div class="nav-item">
                     <a class="nav-link" href="#">ella@ellakirkpatrick.com</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+                </div>
+            </div>
         </div>
     </nav>
-    <section class="container text-center">
-        <div class="row">
-            <div class="col">
-                <div class="jumbotron">
-                    <h1 class="display-2 font-weight-bolder">Need help with maths?</h1>
-                    <p class="lead">Look no further! Maths with Ella has resources to help with any maths needs.</p>
-                    <hr class="my-4">
-                    <div class="col">
-                        <div class="row">
-                            <img class="col-6" height="400" src="https://images.squarespace-cdn.com/content/v1/5eb536030d11157eb4dbe5c0/1590503182994-CR4V3I4U64U67Q70Y77P/ke17ZwdGBToddI8pDm48kM556U7D2zlGPdggxWl458V7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1Ub03BmH0RFgPB2v5nIgFaXFbkwgmZm7ifjqzSGBHiDWrJ7bYbhqV91KIssM_i2iNYg/IMG_20200520_211440%2B%25281%2529.jpg" />
-                            <p class="col-6">My name is Ella. I love maths but I know that not everyone else does!  However, I believe everyone can succeed at maths with a little help and the right tutor.</p>        
-                        </div>
+    <section class="container container-first">
+        <div class="content-wrapper">
+            <div class="main-statement">
+                <h1>There’s a better<br>way to prepare.</h1>
+                <p>Private Tutoring, Worksheet and Test services available that helps<br>you or your childs Maths performance grow. Maths with Ella has<br>resources to help with any maths needs.</p>
+                <div class="button-margin">
+                    <a href="#">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="content-wrapper">
+            <div class="proflie-section">
+                <div class="dual-content profile-wrapper">
+                    <img src="{% static 'img/ella-profile.jpg' %}" />
+                </div><div class="dual-content personal-statement">
+                    <h1>My name is Ella.</h1>
+                    div.learn
+                    <p>I love maths but I know that not everyone else does! However, I believe everyone can succeed at maths with a little help and the right tutor.</p>
+                    <div class="button-margin">
+                        <a href="#">Learn more</a>
                     </div>
-                    <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                    </p>
                 </div>
             </div>
         </div>

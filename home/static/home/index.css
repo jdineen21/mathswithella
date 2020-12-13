@@ -40,6 +40,10 @@ p {
     box-shadow: 0 2px 4px rgba(45,62,80,0.12);
 }
 
+.navbar {
+    overflow: hidden;
+}
+
 .nav-brand {
     margin-right: 1rem;
     display: inline-block;
@@ -67,11 +71,15 @@ p {
     color: #ffffff;
 }
 
+.navbar .icon {
+    display: none;
+}
+
 .container-first {
-    padding: 5rem 0 15rem 0;
+    padding: 5rem 0 18rem 0;
     background-color: #fef8f0;
     color: #33475b;
-    border-bottom: 3px solid rgb(34, 53, 71);
+    border-bottom: 4px solid rgb(34, 53, 71);
 }
 
 .container-first h1 {
@@ -81,6 +89,12 @@ p {
 
 .container-first h4 {
     font-size: 2rem;
+}
+
+.main-statement {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .dual-content {
@@ -111,12 +125,6 @@ p {
     border-radius: 0.1rem;
 }
 
-.button a:hover {
-    background-color: rgb(34, 53, 71);
-    color: #ffffff;
-}
-
-.button-margin a:hover {
-    background-color: rgb(34, 53, 71);
-    color: #ffffff;
+.button a:hover, .button-margin a:hover {
+    background-color: #ff9276;
 }
